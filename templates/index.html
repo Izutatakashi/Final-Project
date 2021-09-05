@@ -1,0 +1,264 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Work Progress Status
+{% endblock %}
+
+
+{% block main %}
+    <!--cssの場所を記述-->
+	<link href="/static/index.css" rel="stylesheet">
+
+
+	{# #############  以下は管理者の画面に表示するもの #############  #}
+
+	<!--ユーザー番号1は管理者だから管理者画面を設定する-->
+	{% if current_user == 1 %}
+
+	<div id="index_wrapper">
+		<br>
+		<h6 class="h_6_1"> <img src="/static/cat11.png" class="cat_img"> Update & Save Sample Text <img src="/static/cat11.png" class="cat_img"> </h6>
+		<!--actionにいれてある/only_adminなんとかはpythonのほうで入力してある/only_adminが発動-->
+		<form action="/sample_file_to_update" method="post">
+			<p>
+				<label class="label_par1">Step1 - Choose Sample</label> <br><br>
+
+				<table class="sample_table">
+					<tr class="sample_table_tr">
+						<td class="sample_table_td">
+				<select id="select_box1" class="label_par" name="selected_sample" required>
+					<option value="not_chosen">choose text</option>
+					<option value="text_1">sample 1</option>
+					<option value="text_2">sample 2</option>
+					<option value="text_3">sample 3</option>
+					<option value="text_4">sample 4</option>
+					<option value="text_5">sample 5</option>
+					<option value="text_6">sample 6</option>
+					<option value="text_7">sample 7</option>
+					<option value="text_8">sample 8</option>
+					<option value="text_9">sample 9</option>
+					<option value="text_10">sample 10</option>
+					<option value="text_11">sample 11</option>
+					<option value="text_12">sample 12</option>
+					<option value="text_13">sample 13</option>
+					<option value="text_14">sample 14</option>
+					<option value="text_15">sample 15</option>
+					<!-- Change here if you changed 'NUMBER_OF_TEXTS' in application.py  -->
+			   <!-- <option value="text_10">sample 16</option>
+					<option value="text_11">sample 17</option>
+					<option value="text_12">sample 18</option>
+					<option value="text_13">sample 19</option>
+					<option value="text_14">sample 20</option> -->
+				</select>
+
+						<span class="label_par">(required)</span>
+						</td>
+						<td class="sample_table_td"> &nbsp; &nbsp;</td>
+						<td class="sample_table_td">
+							<input id="submit" type="submit" value="submit" class="submit_button">
+						</td>
+					</tr>
+				</table>
+			</p>
+ 		</form>
+		<br>
+		<form action="/save_sample_text" method="post">
+
+			<p>
+				<span  class="label_par1">Step2 - Input Sample Text</span><br>
+				<input id = "adm_text_box" name = "selected_sample" type="text" readonly="readonly" value= {{file_name}}> </input>
+				<br><br>
+				<textarea name="save_sample_text" rows="10" cols="80" placeholder="input the sample text here" id="text_area">{{text_inside_file}}</textarea>
+				<br>
+				</p>
+                <br>
+                <table class="sample_table">
+					<tr class="sample_table_tr">
+						<td class="sample_table_td">
+							<input id="submit" type="submit" value="save" class="save_button">
+						</td>
+					</tr>
+				</table>
+			</p>
+		</form>
+		<br>
+	</div>
+		<br>
+    {% endif %}
+
+
+	{# #############  すべてのユーザーに表示させる情報．課題作成の進捗状況 #############  #}
+
+	<div id="all_user_div">
+		<br>
+		<h6 class="h_6_2"> <img src="/static/cat12.png" class="cat_img"> Select an Input Text If You Want to Work out <img src="/static/cat12.png" class="cat_img">  </h6>
+
+		<form action="/choose_your_text_to_input" method="post">
+			<p>
+             <table class="sample_table">
+				<tr class="sample_table_tr">
+					<td class="sample_table_td">
+
+				<select id="select_box2" class="label_par" name="selected_input_file_name" required>
+					<option value="not_chosen">choose text</option>
+					<option value="text_1">text 1</option>
+					<option value="text_2">text 2</option>
+					<option value="text_3">text 3</option>
+					<option value="text_4">text 4</option>
+					<option value="text_5">text 5</option>
+					<option value="text_6">text 6</option>
+					<option value="text_7">text 7</option>
+					<option value="text_8">text 8</option>
+					<option value="text_9">text 9</option>
+					<option value="text_10">text 10</option>
+					<option value="text_11">text 11</option>
+					<option value="text_12">text 12</option>
+					<option value="text_13">text 13</option>
+					<option value="text_14">text 14</option>
+					<option value="text_15">text 15</option>
+					<!-- Change here if you changed 'NUMBER_OF_TEXTS' in application.py  -->
+			   <!-- <option value="text_10">sample 16</option>
+					<option value="text_11">sample 17</option>
+					<option value="text_12">sample 18</option>
+					<option value="text_13">sample 19</option>
+					<option value="text_14">sample 20</option> -->
+				</select> &nbsp; &nbsp; &nbsp; &nbsp;
+				</td>
+						<td class="sample_table_td"> &nbsp; &nbsp;</td>
+						<td class="sample_table_td">
+							<input id="submit" type="submit" value="submit" class="submit_button">
+						</td>
+					</tr>
+				</table>
+			</p>
+		</form>
+		<br>
+		<h6 class="h_6_2"> Your Personal Info - Work in Progress </h6>
+    	<table class="table display_table">
+			<thead class="info_table">
+				<tr>
+					<th scope="col">File</th>
+					<th scope="col">Done</th>
+					<th scope="col">Match</th>
+					<th scope="col">Last Update</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for user in user_info %}
+			<tr>
+				<td scope="row">{{ user[1] }}</td>
+				<td>{{ user[2] }}&nbsp;/&nbsp;{{user[3]}}</td>
+				<td>{{ user[4] }}&nbsp;%</td>
+				<td>{{ user[5] }}</td>
+
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+
+	<br>
+
+	</div>
+
+	<br>
+
+	{# #############  以下は管理者の画面に表示するもの ############# #}
+
+	{% if current_user == 1 %}
+
+	{# #############  すべてのユーザーの進捗状況 #############  #}
+
+	<div id="all_info">
+		<br>
+		<h6 class="h_6_3"> <img src="/static/cat13.png" class="cat_img"> All users' Info - Work in Progress <img src="/static/cat13.png" class="cat_img"> </h6>
+		<table class="button_table table_all_info_work">
+			<tr class="table_all_info_work_tr"><!--valueにかいてるshowやhideがボタンの文字として出る -->
+				<td class="table_all_info_work_td">
+					<form id="all_work_in_progress_show" action="/show_all_work_in_progess" method="POST">
+						<input type="submit" value="" class="show_button">
+					</form></td>
+				<td class="table_all_info_work_td">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+				<td class="table_all_info_work_td">
+					<form id="all_work_in_progress_hide" action="/hide_all_work_in_progess" method="POST">
+						<input type="submit" value="" class="hide_button">
+					</form>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+
+   		<table class="table display_table">
+			<thead class="info_table">
+				<tr>
+					<th scope="col">User</th>
+					<th scope="col">File</th>
+					<th scope="col">Done</th>
+					<th scope="col">Match</th>
+					<th scope="col">Last Update</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for all_users_situation in all_current_situation %}
+				<tr>
+					<td scope="row">{{ all_users_situation[0] }}</td>
+					<td>{{ all_users_situation[1] }}</td>
+					<td>{{ all_users_situation[2] }}&nbsp;/&nbsp;{{all_users_situation[3]}}</td>
+					<td>{{ all_users_situation[4] }}</td>
+					<td>{{ all_users_situation[5] }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		<br>
+		</div>
+
+	{# #############  すべてのユーザーの履歴 ########## #}
+
+		<br>
+	<div id="all_activities">
+		<br>
+		<h6 class="h_6_4"> <img src="/static/cat14.png" class="cat_img"> All Users' Activities <img src="/static/cat14.png" class="cat_img"> </h6>
+
+		<table class="button_table table_all_info_work">
+			<tr class="table_all_info_work_tr">
+				<td class="table_all_info_work_td">
+					<form id="all_info_form_show" action="/show_all_activities" method="POST">
+						<input type="submit" value="" class="show_button"> </input>
+					</form>
+				</td>
+				<td class="table_all_info_work_td">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+				<td class="table_all_info_work_td">
+					<form id="all_info_form_hide" action="/hide_all_activities" method="POST">
+						<input type="submit" value="" class="hide_button"> </input>
+					</form>
+				</td class="table_all_info_work_td">
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+
+	    <table class="table display_table">
+    		<thead class="info_table">
+       			<tr>
+          			<th scope="col">User </th>
+          			<th scope="col">Action </th>
+          			<th scope="col">Last Update</th>
+        		</tr>
+      		</thead>
+      		<tbody>
+    		{% for all_user in all_info %}
+      		<tr>
+        		<td scope="row">{{ all_user[0] }}</td>
+       		 	<td>{{ all_user[1] }}</td>
+        		<td>{{ all_user[2] }}</td>
+      		</tr>
+    	{% endfor %}
+      		</tbody>
+    	</table>
+    	<br>
+    </div>
+    {% endif %}
+
+
+
+{% endblock %}

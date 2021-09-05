@@ -1,0 +1,153 @@
+ #adm_text_box{
+ 	border:0 none;
+ 	text-align:center;
+	color:red;
+	font-weight:bolder;
+}
+
+.horizontal_line{
+	border-top: 1px solid #b8860b;
+	background-color:#b8860b;
+}
+
+#text_area{
+	padding:10px;
+}
+
+#history_wrapper{
+    border-radius:3px;
+    border-style: outset;
+    border-color: #00ced1;
+    margin-right:auto;
+    margin-left:auto;
+     width:550px;
+    box-shadow: 10px 10px #f5f5f5;
+
+}
+
+.h_6_1{
+    color: #00ced1;
+    font-weight:800;
+    text-shadow: 1px 1px #ffd700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing:1px;
+
+}
+
+
+
+.display_table{
+    margin-left:auto;
+    margin-right:auto;
+    width:550px;
+    color:#696969;
+    font-size:xx-small;
+    line-height:0.1;
+}
+
+#table_thead{
+    background-color:white;
+
+}
+
+.table_row{
+     background-color:white;
+}
+
+#history_div{
+    border-radius:3px;
+    border-style: outset;
+    border-color: #00ced1;
+    margin-right:auto;
+    margin-left:auto;
+    box-shadow: 10px 10px #f5f5f5;
+}
+
+.h_6_2{
+    color: #ffd700;
+}
+
+#all_info{
+    border-radius:3px;
+    border-style: outset;
+    border-color: #6495ed;
+    margin-right:auto;
+    margin-left:auto;
+    box-shadow: 10px 10px #f5f5f5;
+}
+
+.h_6_3{
+    color: #6495ed;
+}
+
+
+#all_activities{
+    border-radius:3px;
+    border-style: outset;
+    border-color: #db7093;
+    margin-right:auto;
+    margin-left:auto;
+    box-shadow: 10px 10px #f5f5f5;
+}
+
+
+.h_6_4{
+    color: #db7093;
+}
+
+.submit_button{
+    background-color:#66cdaa;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #8fbc8f;
+    color:white;
+}
+
+.save_button{
+    background-color:#1e90ff;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #87cefa;
+    color:white;
+}
+
+.button_table{
+     float:right;
+     width:100px;
+}
+
+.show_button{
+    background-color:#66cdaa;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #8fbc8f;
+    color:white;
+}
+
+.hide_button{
+    background-color:#f8f8ff;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #f5f5f5;
+    color:#a9a9a9;
+}
+
+. info_table{
+    background-color:#87cefa;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #f5fffa;
+    color:#a9a9a9;
+    width:700px;
+
+}
+
+.label_par{
+    color:#dc143c;
+}
+
+.label_par1{
+    color:#4169e1;
+}

@@ -1,0 +1,125 @@
+#login_wrapper{
+    border-radius:3px;
+    border-style: outset;
+    border-color: #6495ed;
+    width:500px;
+    height:400px;
+    margin-right:auto;
+    margin-left:auto;
+    box-shadow: 20px 20px #f5f5f5;
+}
+
+
+#submit_button{
+    background-color:white; /*#66cdaa;*/
+    /*border-radius:3px;
+    border-style: ouset;*/
+    border-color: white; /*#8fbc8f;*/
+    /*color:white;
+    box-shadow: 2px 2px #dc143c;*/
+    background-image:url("login-btn.png");
+    background-size: cover;
+    height:40px;
+    width:80px;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+#submit_button:hover{
+     height:30px;
+
+}
+
+
+
+#register_button{
+    background-color:white; /*#66cdaa;*/
+    /*border-radius:3px;
+    border-style: ouset;*/
+    border-color: white; /*#8fbc8f;*/
+    /*color:white;
+    box-shadow: 2px 2px #dc143c;*/
+    background-image:url("register-btn.png");
+    background-size: cover;
+    height:40px;
+    width:80px;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+#register_button:hover{
+    height:30px;
+
+}
+
+.btn-td{
+    height:70px;
+}
+
+.login_par{
+    color: #4169e1;
+    color: #db7093;
+    font-weight:800;
+    text-shadow: 1px 1px #0000ff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing:1px;
+
+}
+
+#table_button{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.save_button{
+    background-color:#1e90ff;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #87cefa;
+    color:white;
+}
+
+.button_table{
+     float:right;
+     width:100px;
+}
+
+.show_button{
+    background-color:#66cdaa;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #8fbc8f;
+    color:white;
+}
+
+.hide_button{
+    background-color:#f8f8ff;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #f5f5f5;
+    color:#a9a9a9;
+}
+
+.info_table{
+    background-color:#87cefa;
+    border-radius:3px;
+    border-style: ouset;
+    border-color: #f5fffa;
+    color:#a9a9a9;
+    width:700px;
+
+}
+
+.display_table{
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#lat, #lat_dummy, #long, #long_dummy{
+    width:0px;
+    height:0px;
+    border:none;
+}

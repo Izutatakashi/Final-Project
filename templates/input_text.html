@@ -1,0 +1,820 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Work Progress Status
+
+{% endblock %}
+
+{% block main %}
+
+<link rel="stylesheet" href="/static/keyboard.css">
+<script type="text/javascript" src="/static/keyboard.js"></script>
+<script type="text/javascript" src="/static/disable_key.js"></script>
+
+	<div id="wrapper"><!--wrapper-->
+		<br>
+		<div> <!--left-->
+			<h6 id="h_6"> <img src="/static/cat14.png" class="cat_img"> Input & Update Text <img src="/static/cat14.png" class="cat_img"> </h6>
+			<p id="no_copy_paste"> &nbsp; <br>Right click, Ctrl+C, Ctrl+V are disabled.</p>
+			<form action="/update_my_input_file" method="post">
+				<input name="input_file_name" readonly="readonly" value= {{file_name}} id="text_box"> </input>
+				<br>
+				<textarea name="input_text" rows="12" cols="80" id="text_area">{{text_to_update}}</textarea>
+        		<br>
+        		<table class="input_table">
+					<tr class="input_table_tr">
+						<td class="input_table_td">
+							<input id="submit" type="submit" value="save">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div><!--left-->
+
+    	<div id="form"><!--form-->
+    		<table class="form_table">
+    			<tr class="form_table_tr">
+    				<td class="form_table_td">
+    					<div id="label_new_win" >
+    						<span class="label_par">show</span>
+    						<span class="label_par"> text </span>
+    					</div>
+    				</td>
+    				<td class="form_table_td form_table_td_input">
+    					<div id="label_new_win1">
+    						<input id="new_win" autocomplete="off" autofocus placeholder="Name" type="text" value="{{sample_text}}" readonly="readonly" >
+    					</div>
+    				</td>
+    				<td class="form_table_td">
+						<div id="form_table_div"> </div>
+    				</td>
+    			</tr>
+    		</table>
+    	</div><!--form-->
+
+
+		<br>
+
+		<div id="keyboard"><!--keyboard-->
+
+			<ul id="keys">
+				<!-- numbers -->
+				<li class="key_row" id="number_row">
+					<div class="regular_key" id="Backquote"><!--key-->
+						<span class="small_letter">半角</span>
+						<br>
+						<span class="small_letter">全角</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit1"><!--key-->
+						<span class="key_letter">！
+							<span class="small_letter">&nbsp;</span>
+						</span>
+						<br>
+						<span class="key_letter">1&nbsp;ぬ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit2"><!--key-->
+						<span class="key_letter">&quot;
+							<span class="small_letter">&nbsp;</span>
+						</span>
+						<br>
+						<span class="key_letter">2&nbsp;ふ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit3"><!--key-->
+						<span class="key_letter">#
+							<span class="small_letter">あ</span>
+						</span>
+						<br>
+						<span class="key_letter">3&nbsp;あ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit4"><!--key-->
+						<span class="key_letter">$
+							<span class="small_letter">う</span>
+						</span>
+						<br>
+						<span class="key_letter">4&nbsp;う</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit5"><!--key-->
+						<span class="key_letter">%
+							<span class="small_letter">え</span>
+						</span>
+						<br>
+						<span class="key_letter">5&nbsp;え</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit6"><!--key-->
+						<span class="key_letter">&amp;
+							<span class="small_letter">え</span>
+						</span>
+						<br>
+						<span class="key_letter">6&nbsp;え</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit7"><!--key-->
+						<span class="key_letter">&lsquo;
+							<span class="small_letter">や</span>
+						</span>
+						<br>
+						<span class="key_letter">7&nbsp;や</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit8"><!--key-->
+						<span class="key_letter">（
+							<span class="small_letter">ゆ</span>
+						</span>
+						<br>
+						<span class="key_letter">8&nbsp;ゆ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit9"><!--key-->
+						<span class="key_letter">）
+							<span class="small_letter">よ</span>
+						</span>
+						<br>
+						<span class="key_letter">9&nbsp;よ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Digit0"><!--key-->
+						<span class="small_letter">&nbsp;を</span>
+						<br>
+						<span class="key_letter">0&nbsp;わ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="DigitMinus"><!--key-->
+						<span class="key_letter">=&nbsp;</span>
+						<br>
+						<span class="small_letter">&minus;&nbsp;ほ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="DigitCirc"><!--key-->
+						<span class="key_letter">&tilde;&nbsp;</span>
+						<br>
+						<span class="small_letter">&circ;&nbsp;へ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="DigitYen"><!--key-->
+						<span class="key_letter">&tilde;&nbsp;</span>
+						<br>
+						<span class="key_letter">&yen;&nbsp;－</span>
+					</div><!--key-->
+					<div class="key_space"><!--space between keys-->
+					</div>
+					<div class="regular_key" id="BackSpace"><!--key-->
+						<span class="key_letter">Back</span>
+						<br>
+						<span class="key_letter">Space</span>
+					</div><!--key-->
+				</li>
+
+				<!-- QWERT -->
+
+				<li class="key_row" id="qwert_row">
+					<div class="regular_key tab_key" id="KeyTab"><!--key-->
+						<span class="small_letter">Tab &nbsp; |&larr;</span>
+						<br>
+						<span class="small_letter"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr;|</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyQ"><!--key-->
+						<span class="key_letter">Q
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;た</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyW"><!--key-->
+						<span class="key_letter">W
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;て</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyE"><!--key-->
+						<span class="key_letter">E
+							<span class="small_letter">い</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;い</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyR"><!--key-->
+						<span class="key_letter">R
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;す</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyT"><!--key-->
+						<span class="key_letter">T
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;か</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyY"><!--key-->
+						<span class="key_letter">Y
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ん</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyU"><!--key-->
+						<span class="key_letter">U
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;な</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyI"><!--key-->
+						<span class="key_letter">I
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;に</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyO"><!--key-->
+						<span class="key_letter">O
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ら</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyP"><!--key-->
+						<span class="key_letter">P
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;せ</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="BracketLeft"><!--key-->
+						<span class="key_letter">`
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;@</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="BracketRight"><!--key-->
+						<span class="key_letter">{
+							<span class="small_letter">「</span>
+						</span>
+						<br>
+						<span class="key_letter">[&nbsp;。</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key Enter1_key" id="EnterUp"><!--key-->
+						<span class="key_letter"><span class="small_letter">Enter</span></span>
+						<br>
+						<span class="key_letter"><span class="small_letter">&nbsp;</span></span>
+					</div><!--key-->
+				</li>
+
+				<!--ASDFG-->
+
+				<li class="key_row" id="asdfg_row">
+					<div class="regular_key caps_key" id="CapsLock"><!--key-->
+						<span class="small_letter">Caps &nbsp; Lock</span>
+						<br>
+						<span class="small_letter"> 英数　&nbsp; </span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyA"><!--key-->
+						<span class="key_letter">A
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+					<!-- --->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyS"><!--key-->
+						<span class="key_letter">S
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;と</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyD"><!--key-->
+						<span class="key_letter">D
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;し</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyF"><!--key-->
+						<span class="key_letter">F
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;は</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyG"><!--key-->
+						<span class="key_letter">G
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;き</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyH"><!--key-->
+						<span class="key_letter">H
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;く</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyJ"><!--key-->
+						<span class="key_letter">J
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ま</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyK"><!--key-->
+						<span class="key_letter">K
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;の</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyL"><!--key-->
+						<span class="key_letter">L
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;り</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Semicolon"><!--key-->
+						<span class="key_letter">+
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">;&nbsp;&nbsp;れ</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Quote"><!--key-->
+						<span class="key_letter">*
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">:&nbsp;&nbsp;け</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Backslash"><!--key-->
+						<span class="key_letter">}
+							<span class="small_letter">」</span>
+						</span>
+						<br>
+						<span class="key_letter">]&nbsp;&nbsp;む</span>
+					</div><!--key-->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key Enter2_key" id="EnterDown"><!--key-->
+						<span class="key_letter"><span class="small_letter">&larr;|&nbsp;</span></span>
+						<br>
+						<span class="key_letter"><span class="small_letter">&nbsp;</span></span>
+					</div><!--key-->
+				</li>
+
+				<!--ZXCVB-->
+
+				<li class="key_row" id="zxcvb_row">
+
+					<div class="regular_key Shift_key" id="ShiftLeft"><!--key-->
+						<span class="small_letter">Shift &nbsp;&uArr;</span>
+						<br>
+						<span class="small_letter">&nbsp;　&nbsp; </span>
+					</div><!--key-->
+
+					<!-- --->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyZ"><!--key-->
+						<span class="key_letter">Z
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyX"><!--key-->
+						<span class="key_letter">X
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyC"><!--key-->
+						<span class="key_letter">C
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyV"><!--key-->
+						<span class="key_letter">V
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyB"><!--key-->
+						<span class="key_letter">B
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyN"><!--key-->
+						<span class="key_letter">N
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KeyM"><!--key-->
+						<span class="key_letter">M
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;&nbsp;ち</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Comma"><!--key-->
+						<span class="key_letter">&lt;
+							<span class="small_letter">、</span>
+						</span>
+						<br>
+						<span class="key_letter">,&nbsp;&nbsp;ね</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Period"><!--key-->
+						<span class="key_letter">&gt;
+							<span class="small_letter">。</span>
+						</span>
+						<br>
+						<span class="key_letter">.&nbsp;&nbsp;る</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Slash"><!--key-->
+						<span class="key_letter">?
+							<span class="small_letter">・</span>
+						</span>
+						<br>
+						<span class="key_letter">/&nbsp;&nbsp;め</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="IntlRo"><!--key-->
+						<span class="key_letter">_
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">\&nbsp;&nbsp;ろ</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key Shift_key" id="ShiftRight"><!--key-->
+						<span class="small_letter">&uArr; &nbsp; Shift</span>
+						<br>
+						<span class="small_letter">&nbsp;　&nbsp; </span>
+					</div><!--key-->
+				</li>
+
+
+				<!--Lower row-->
+
+				<li class="key_row" id="lower_row">
+
+					<div class="regular_key Ctrl_key" id="ControlLeft"><!--key-->
+						<span class="small_letter">Ctrl &nbsp;</span>
+						<br>
+						<span class="small_letter">&nbsp;　&nbsp; </span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="codeFN"><!--key-->
+						<span class="key_letter">Fn
+							<span class="small_letter"></span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="MetaLeft"><!--key-->
+						<span class="key_letter">&#8962;
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="AltLeft"><!--key-->
+						<span class="key_letter">Alt
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="NonConvert"><!--key-->
+						<span class="key_letter"><span class="small_letter">無変換</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+					<!-- --->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key space_key" id="Space"><!--key-->
+						<span class="key_letter">
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+					<!-- --->
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="Convert"><!--key-->
+						<span class="key_letter"><span class="small_letter">変換</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="KanaMode"><!--key-->
+						<span class="key_letter"><span class="small_letter">カ・ひ</span>
+						</span>
+						<br>
+						<span class="key_letter"><span class="small_letter">ローマ</span></span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="AltRight"><!--key-->
+						<span class="key_letter">Alt
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key" id="ContextMenu"><!--key-->
+						<span class="key_letter">&#926;
+							<span class="small_letter">　</span>
+						</span>
+						<br>
+						<span class="key_letter">&nbsp;&nbsp;</span>
+					</div><!--key-->
+
+
+					<!-- --->
+
+
+					<div class="key_space"><!--space between keys-->
+					&nbsp;</div>
+
+					<div class="regular_key Ctrl_key" id="ControlRight"><!--key-->
+						<span class="small_letter">Ctrl &nbsp;</span>
+						<br>
+						<span class="small_letter">&nbsp;　&nbsp; </span>
+					</div><!--key-->
+
+
+
+
+
+			</ul>
+		</div><!--keyboard-->
+
+		<br>
+	</div> <!--wrapper-->
+
+{% endblock %}

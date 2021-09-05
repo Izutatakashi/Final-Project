@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+	<link href="/static/register.css" rel="stylesheet">
+
+    <div id="register_wrapper">
+        <br>
+        <p class="h_6_1"><img src="/static/cat11.png" class="cat_img"> Register <img src="/static/cat11.png" class="cat_img"> </p><br>
+        <form action="/register" method="post">
+
+        <div class="form-group"></div>
+
+        <table id="table_up">
+            <tr>
+                <td>
+                    <span class="h_6_2">user ID: </span>
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <input id='username' autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+                </td>
+            </tr>
+        </table>
+                <div class="form-group">
+                    <br><p class='error'>Must contain at least 8 characters, <br> (letters and numbers ONLY)</p>
+                 </div>
+        <table id="table_down">
+            <tr>
+                <td>
+                   <span class="h_6_2">password: </span>
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <input id='pass' class="form-control" name="password" placeholder="Password" type="password">
+                </td>
+            </tr>
+            <tr><td>&nbsp;&nbsp;</td><td></td><td></td></tr>
+            <tr>
+            <div class="form-group">
+                <td>
+                    <span class="h_6_2">retype password: </span>
+                </td>
+                 <td>&nbsp;&nbsp;</td>
+                <td>
+                    <input id='confirm-pass' class="form-control" name="confirm-password" placeholder="Confirm Password" type="password">
+                </td>
+            </div>
+            </tr>
+        </table>
+            <br>
+            <table id="register_submit_table">
+                <tr class="register_submit_table_tr">
+                    <td class="register_submit_table_td">
+                        <button id='submit' class="btn btn-primary" type="submit">register</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input name="lat" readonly="readonly" id="lat"> </input>
+            <br>
+            <input name="long" readonly="readonly" id="long"> </input>
+
+        </form>
+    </div>
+
+        <script>
+        // password validation, you can submit only if the pass is at least 8 characters and contains only alphanumeric characters
+            document.querySelector('#submit').disabled = true;
+            document.querySelector('#pass').onkeyup = function() {
+                let password = document.querySelector('#pass').value;
+
+                if (password.length > 7 && password.match(/^[0-9a-z]+$/i) && password.match(/\d/) && password.match(/[a-z]/i)){
+                    document.querySelector('#submit').disabled = false;
+                }
+                else {
+                    document.querySelector('#submit').disabled = true;
+                }
+            }
+
+
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+    		function successCallback(position) {
+	    		document.getElementById('lat').value = position.coords.latitude;
+		    	document.getElementById('long').value = position.coords.longitude;
+		    }
+
+    		function errorCallback(position) { //set tokyo-shinjuku ward as the default
+	    		document.getElementById('lat').value = "35.6897348";
+		    	document.getElementById('long').value = "139.6978964";
+		    }
+
+
+        </script>
+
+{% endblock %}
+
+

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <link href="/static/login.css" rel="stylesheet">
+
+    <div id="login_wrapper">
+        <br>
+        <p class="login_par">Login <br> (newcomers must register first)</p><br>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <br>
+            <table id="table_button">
+                <tr>
+                    <td class="btn-td">
+                        <button class="btn btn-primary" type="submit" id="submit_button">&nbsp; log in &nbsp; </button>
+                        <br>
+                        <input name="lat" readonly="readonly" id="lat"> </input>
+                        <br>
+                        <input name="long" readonly="readonly" id="long"> </input>
+
+                        </form>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="btn-td">
+                        <form action="/register" method="GET">
+                        <button class="btn btn-primary" type="submit" id="register_button">register</button>
+                         <br>
+                        <input name="lat_dummy" readonly="readonly" id="lat_dummy"> </input>
+                        <br>
+                        <input name="long_dummy" readonly="readonly" id="long_dummy"> </input>
+
+                        </form>
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+    <script>
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+		function successCallback(position) {
+			document.getElementById('lat').value = position.coords.latitude;
+			document.getElementById('long').value = position.coords.longitude;
+		}
+
+		function errorCallback(position) { //set tokyo-shinjuku ward as the default
+			document.getElementById('lat').value = "35.6897348";
+			document.getElementById('long').value = "139.6978964";
+		}
+
+    </script>
+
+{% endblock %}

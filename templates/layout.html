@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+        <link href="/static/favicon.ico" rel="icon">
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--<script src="/static/myjava.js"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>Touch Typing Practice System: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-light border my_nav_bar">
+            <!-- aタグでリンクをいれる、aタグでくくられている部分全部がリンクになるので
+            bg.pngの画像やspanで囲まれている文字もリンクになっている -->
+
+            <a class="navbar-brand" href="/">
+                <div id="my_title">
+                    <div id="my_logo">
+                        <!--<span class="blue">C</span>
+                        <span class="red">S</span>
+                        <span class="yellow">5</span>
+                        <span class="green">0</span>-->
+                        <img src="/static/bg.png" id="logo_img">
+                    </div>
+                    <div id="title_span">
+                        <span class="color1">Touch Typing App</span><br>
+                        <span class="color2">by Takashi Izuta</span>
+                    </div>
+                </div>
+            </a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/" id="link1">
+                                <table class="table_link">
+                                    <tr class="table_tr"> <td class="table_td"> <img src="/static/cat1.png" class="cat_img">  </td> </tr>
+                                    <tr class="table_tr"> <td class="table_td">New Input</td></tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/history" id="link2">
+                                <table class="table_link">
+                                    <tr class="table_tr"> <td class="table_td"> <img src="/static/cat2.png" class="cat_img">  <td> </tr>
+                                    <tr class="table_tr"> <td class="table_td">History</td></tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/change_password" id="link3">
+                                <table class="table_link">
+                                    <tr class="table_tr"> <td class="table_td"> <img src="/static/cat3.png" class="cat_img">  </td> </tr>
+                                    <tr class="table_tr"> <td class="table_td">Change Password</td></tr>
+                                </table>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- weather info-->
+
+                    <ul class="navbar-nav mt-2" id="weather_info">
+                        <li class="nav-item">
+                            <table class="table_link" id="table_link_center">
+                                <tr class="table_tr">
+                                    <td class="table_td table_td_center"> {{ session.city }}  </td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center"> <img src="/static/cat4.png" class="cat_img">  </td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center"> {{ session.humidity }}  </td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center"> <img src="/static/cat5.png" class="cat_img">  </td>
+                                </tr>
+                                <tr class="table_tr">
+                                    <td class="table_td table_td_center"><img src="/static/cat9.png" class="cat_img"></td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center">{{ session.temperature }}&#8451;</td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center"><img src="/static/cat8.png" class="cat_img"></td>
+                                    <td class="table_lin_center_td">&nbsp;</td>
+                                    <td class="table_td table_td_center">{{ session.condition }}</td>
+                                </tr>
+                                </table>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- weather info-->
+
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout" id="link4">
+                                <table class="table_link">
+                                    <tr class="table_tr">
+                                        <td class="table_td table_td_center"> logged as </td>
+                                        <td class="table_lin_center_td">&nbsp;</td>
+                                        <td class="table_td"> <img src="/static/cat6.png" class="cat_img"> </td>
+                                    </tr>
+                                    <tr class="table_tr">
+                                        <td class="table_td table_td_center">{{ session.user_name }}</td>
+                                        <td class="table_lin_center_td">&nbsp;</td>
+                                        <td class="table_td">Log Out</td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login" id="link5">
+                                <table class="table_link">
+                                    <tr class="table_tr"> <td class="table_td"> <img src="/static/cat6.png" class="cat_img">  </td> </tr>
+                                    <tr class="table_tr"> <td class="table_td">Log In</td></tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register" id="link6">
+                                <table class="table_link">
+                                    <tr class="table_tr">
+                                        <td class="table_td"> <img src="/static/cat4.png" class="cat_img">  </td>
+
+                                    </tr>
+                                    <tr class="table_tr">
+                                         <td class="table_td">Register</td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.4.0/lib/darkmode-js.min.js"></script>
+
+        <script>
+        var options = {
+          bottom: '550px', // default: '32px'
+          right: '20px', // default: '32px'
+          left: 'unset', // default: 'unset'
+          time: '0.5s', // default: '0.3s'
+          mixColor: '#fff', // default: '#fff'
+          backgroundColor: '#fff',  // default: '#fff'
+          buttonColorDark: '#363554',  // default: '#100f2c'
+          buttonColorLight: '#fff', // default: '#fff'
+          saveInCookies: true, // default: true,
+          label: '<img src="/static/cat4.png">',
+          autoMatchOsTheme: true // default: true
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        </script>
+
+<!--
+        <footer class="small text-center text-muted">
+            Data provided for free by
+            <a href="https://iextrading.com/developer">
+                IEX
+            </a>
+            . View
+            <a href="https://iextrading.com/api-exhibit-a/">
+                IEX’s Terms of Use
+            </a>.
+        </footer>
+-->
+    </body>
+
+</html>
