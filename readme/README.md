@@ -101,27 +101,27 @@
 
 テーブル'users'は、ユーザーの情報を保存するために使用され、以下の構造を持っています。
 
-  -id: integer primary key autoincrement
-  -user_name: TEXT NOT NULL
-  -user_password: TEXT NOT NULL
-  -register_date DEFAULT CURRENT_TIMESTAMP NOT NULL
-  -user_inputテーブルは、ユーザーの作業の現在の状態を保存するために使用されます。
+-id: integer primary key autoincrement
+-user_name: TEXT NOT NULL
+-user_password: TEXT NOT NULL
+-register_date DEFAULT CURRENT_TIMESTAMP NOT NULL
+-user_inputテーブルは、ユーザーの作業の現在の状態を保存するために使用されます。
 
 そのフィールドは
-  -id integer primary key autoincrement
-  -user_id: integer not null
-  -user_name: TEXT NOT NULL
-  -input_file_name: TEXT NOT NULL
-  -input_done: NUMERIC NOT NULL
-  -input_match: NUMERIC NOT NULL
-  -last_update: DEFAULT CURRENT_TIMESTAMP NOT NULL
-  -historyテーブルは、システム上のアクティビティが格納されています。
+-id integer primary key autoincrement
+-user_id: integer not null
+-user_name: TEXT NOT NULL
+-input_file_name: TEXT NOT NULL
+-input_done: NUMERIC NOT NULL
+-input_match: NUMERIC NOT NULL
+-last_update: DEFAULT CURRENT_TIMESTAMP NOT NULL
+-historyテーブルは、システム上のアクティビティが格納されています。
 
 そのフィールドは
-  -id: integer primary key
-  -user_id:  INTEGER NOT NULL
-  -activity: TEXT NOT NULL
-  -last_update DEFAULT CURRENT_TIMESTAMP NOT NULL
+-id: integer primary key
+-user_id:  INTEGER NOT NULL
+-activity: TEXT NOT NULL
+-last_update DEFAULT CURRENT_TIMESTAMP NOT NULL
 次に、管理者がテーブルに存在しない場合は、挿入します。
 
 最後に、「admin_folder」と「users_folders」というフォルダが存在するかどうかを確認します。存在しない場合は、それらを作成し、その中に管理者のフォルダを作成します。また、「admin_folder/admin」フォルダの中にサンプルファイルを、「users_folder/admin」の中にタイプライターのタスクファイルを作成します。
