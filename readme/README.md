@@ -47,6 +47,15 @@
  It might sound naive or even exaggerated, but since, in general, any IT related activity starts on a keyboard or some similar devices and end up relying on the user's typewriting skills, the potential contribution of this app is, so to speak, incomputable!  
 
 ## :point_right: Basic Specification 
+ 
+ このアプリは、flaskベースのウェブサーバ上で動作するpython、JavaScript、sqlite3、html、cssで実装されています。
+
+このアプリは、標準的なディスプレイデバイスを装備したデスクトップまたはラップトップコンピュータで使用するように設計されています。スマートフォンなどのモバイル端末での使用は推奨されていません。
+
+このアプリは、ユーザーのブラウザのジオロケーションに関連する天気情報をタイトルバーに表示します。この情報は、事前にAPI KEYを取得することで、外部のWebサービスopenweathermapから取得しています。さらに、ユーザーがシステムに登録またはログインする際にジオロケーションを取得します。
+
+また、ウィンドウの右側に表示されるアイコンをクリックすると、ダークウィンドウの機能も利用できます。これは、フリーソフトウェアライセンスjsdelivrの一部であり、JavaScriptのコードによってアクセスされます。
+
 
  The app was implemented with python, JavaScript, sqlite3, html and css running on a flask based web server.
 
