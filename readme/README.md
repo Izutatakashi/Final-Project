@@ -93,6 +93,39 @@
 
 ### :smile_cat: Running Up
  
+ システムをセットアップしたら、コンソールウィンドウを開き、「application.py」が格納されているディレクトリに移動します。そして、コンソールで「flask run」と入力して起動します。
+
+システムを起動した直後に、'application.py'の上部にあるpythonコードの断片が実行されます。
+
+まず、データベースファイルが存在しなければ作成します。次に、テーブル'users'、'user_input'、'history'が存在しない場合は作成されます。
+
+テーブル'users'は、ユーザーの情報を保存するために使用され、以下の構造を持っています。
+
+id: integer primary key autoincrement
+user_name: TEXT NOT NULL
+user_password: TEXT NOT NULL
+register_date DEFAULT CURRENT_TIMESTAMP NOT NULL
+user_inputテーブルは、ユーザーの作業の現在の状態を保存するために使用されます。
+
+そのフィールドは
+id integer primary key autoincrement
+user_id: integer not null
+ユーザー名: TEXT NOT NULL
+input_file_name: TEXT NOT NULL
+input_done: NUMERIC NOT NULL
+input_match: NUMERIC NOT NULL
+last_update: DEFAULT CURRENT_TIMESTAMP NOT NULL
+historyテーブルは、システム上のアクティビティが格納されています。
+
+そのフィールドは
+id: integer primary key
+user_id:  INTEGER NOT NULL
+activity: TEXT NOT NULL
+last_update DEFAULT CURRENT_TIMESTAMP NOT NULL
+次に、管理者がテーブルに存在しない場合は、挿入します。
+
+最後に、「admin_folder」と「users_folders」というフォルダが存在するかどうかを確認します。存在しない場合は、それらを作成し、その中に管理者のフォルダを作成します。また、「admin_folder/admin」フォルダの中にサンプルファイルを、「users_folder/admin」の中にタイプライターのタスクファイルを作成します。
+ 
  Once you set up your system, open a console window and move to the directory where 'application.py' is stored. Then start up by typing 'flask run' on your console.
  
  Immediately after you run up the system, the pieces of python codes in the upper part of 'application.py' are executed.
