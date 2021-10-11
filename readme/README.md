@@ -195,6 +195,22 @@ login.htmlの中には、ログインしたときに天気情報を表示する�
  Finally, pay attention to the details of the designing work of the windows, the icons and the buttons, these assets were all designed and drawn by the author himself.
 
 ### :smile_cat: Register Window
+ 
+ 新規ユーザーは、「register」ボタンをクリックして、「register.html」のフォームに入力する必要があります。
+
+パスワードの長さが7文字以上であるかどうか、文字だけでなく少なくとも数字が含まれているかどうかをJavaScriptでチェックしています。そうでない場合、ボタンregisterは無効になります。
+
+registerボタンを押すと、「application.py」の「register」関数が呼び出されます。この関数は，ユーザIDが利用可能かどうか，入力されたパスワードが一致するかどうかをチェックします．
+
+すべての情報が正しければ、この関数は application.py の関数 'mkdir_mkfile' を呼び出し、ユーザのフォルダとタスクファイルを作成します。
+
+関数registerの最後の処理は、application.py内の関数indexを呼び出し、index.htmlをレンダリングします。
+
+登録すると、システムにログインしてくれる。
+
+実際に、registerを押すと、次に表示されるウィンドウは、ログインしたときと同じになります。
+
+また、registerを押すと天気予報をリクエストして表示するために、ブラウザのジオロケーションをキャッチします。
 
  New users will have to click on 'register' button and fill up the form in 'register.html'
 
