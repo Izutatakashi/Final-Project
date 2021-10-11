@@ -231,6 +231,37 @@ registerボタンを押すと、「application.py」の「register」関数が�
  Also, when you press ‘register’, a JavaScript snippet will catch the browser’s geolocation in order to request and display the weather forecast.
 
 ### :smile_cat: Index Window
+ 
+ 管理者としてログインすると、他のユーザーとは少し違ったウィンドウが表示されます。
+
+ウィンドウは4つの独立したエリアで構成されています。そのうち、すべてのユーザーに表示されるのは2番目のエリアだけです。
+
+上のエリアは、ユーザーが課題として入力しなければならないサンプルテキストを保存・更新するために使用されます。
+
+2つ目のエリアには、ユーザーの現在の作業状況のレポートが表示されます。これは、他のユーザーに表示されるものと同じです。「done」と「match」というフィールドは、講師から割り当てられたサンプルテキストに対するユーザーの相対的な入力結果です。これらの計算は、「application.py」の関数「index」で処理されます。
+
+学生は、入力テキストを選択して「submit」を押すことで、課題の実行を開始します。
+
+3番目のエリアには、すべてのユーザーの作業レポートが表示されます。これにより、管理者は学生のパフォーマンスをチェックし、採点することができます。
+
+一番下のエリアには、すべてのユーザーのアクティビティが表示されます。これにより、管理者はすべてのユーザーの過去と現在の活動を確認することができます。
+
+管理者として、新しいサンプルを保存したり、既存のサンプルファイルを更新したい場合は、まずサンプルファイルを選択して「submit」をクリックします。この関数は、システムからサンプルファイルを取得し、それを開き、その内容を読み込みます。そして、その内容がindex.htmlのテキストエリアに戻されます。
+
+テキストエリアに何かを変更または追加した後、「save」ボタンをクリックする必要があります。このアクションは、application.pyの関数save_sample_textを呼び出します。基本的には、サンプルファイルを更新し、このアクションをテーブルhistoryに記録します。
+
+サンプルテキストが正しくファイルに保存されていれば、ウィンドウは空のテキストエリアで戻ってきます。
+
+管理者として、すべてのユーザーのタイプライター作業の進捗状況を把握したい場合は、「show」ボタンを押してください。すると、application.pyのshow_all_work_in_progess関数が呼び出され、user_inputテーブルから情報を取得してこのページに戻ってきます。
+
+hide をクリックすると、application.pyのhide_all_work_in_progess関数が呼び出され、このウィンドウには何も表示されません。
+
+同様に、showボタンを押すと、application.pyのshow_all_activities関数が呼び出されます。この関数は、テーブル「history」からすべてのレコードを取得し、システムを導入した時点からのすべてのアクティビティを表示します。
+
+一方、hideボタンをクリックすると、application.py内のhide_all_activities関数が呼び出され、空の情報が返されます。
+
+最後に、タスクファイルに文字を入力したい場合は、ファイルを選択して「submit」を押します。すると、application.pyのchoose_your_text_to_input関数が呼び出され、選択したファイルを開いてその内容を読み、'input_text.html'に渡す情報を取得します。
+
 
  When you log in as the administrator, you will have a window a little bit different from other users.
  
