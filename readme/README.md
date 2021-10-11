@@ -68,6 +68,16 @@
 ## :point_right:  System Structure 
 
 ### :smile_cat: Preliminaries
+ 
+ 始める前に、openweathermap で API キーを取得し、「application.py」の 39 行目で変数 WEATHER_API を設定することをお勧めします。
+
+テキストの数を変更したい場合は、「application.py」の44行目でNUMBER_OF_TEXTSのデフォルト値を変更すればOKです。しかし、ここで変更すると、'index.html'も少し変更しなければなりません。そのためには、'index.html'を開いて、指示に従ってください。
+
+データベースファイルと管理者のユーザー名を変更したい場合は、システムを初期状態に戻す必要があります（「application.py」のADMIN_USER_NAMEとDB_NAMEという変数で定義されています）
+
+つまり、システム・フォルダーにある「admin_folder」、「users_folder」、「touch_typing.db」というフォルダーを完全に削除します。
+
+注意していただきたいのは、システムフォルダを削除してしまうと、サンプルファイルやタイプライター作業中のファイルがすべて削除されてしまうことです。そのため、システム導入時の一番最初、まだユーザーが登録されていない状態で行うようにしてください。さらに言えば、自己責任で行ってください。
 
  Before you begin, it is suggested that you get an API key at [openweathermap](https://openweathermap.org/) and set the variable WEATHER_API in 'application.py' at line 39. 
  
