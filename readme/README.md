@@ -307,6 +307,20 @@ Students begin to do their assignments by selecting the input text and pressing 
  ![input_text](select_input_file.png)
 
 ### :smile_cat: Input Text Window
+ 
+ ユーザーが事前に何かを入力していれば、そのテキストがテキストエリアに表示されます。
+
+まず、ユーザーが「show」ボタンをクリックすると、サンプルウィンドウが表示されます。このサンプルウィンドウは、「keyboard.js」に記述されたJavaScriptのコードによって実行されます。
+
+画面上にサンプルテキストが表示されたら、あとは入力テキストエリアにサンプルテキストを書き込んでいくだけです。
+
+テキストエリアに描かれたキーボードレイアウトは、どのキーが押されているかを示しています。これは、「keyboard.js」が行っています。
+
+実は、コピー＆ペースト機能を無効にするJavaScriptも「disable_key.js」に用意されています。
+
+入力ファイルを更新するには、ユーザーが「save」ボタンをクリックして、「application.py」の「update_my_input_file」関数を呼び出す必要があります。
+
+update_my_input_file'関数は、入力ファイルとテーブル'history'を更新し、更新されたテキストで再びこの画面に戻ってきます。
 
  If the user has previously input something, the text will be displayed on the text area. 
 
@@ -325,6 +339,12 @@ Students begin to do their assignments by selecting the input text and pressing 
  Function 'update_my_input_file' will update the input file and table 'history'; then come back again to this screen with updated text.
 
 ### :smile_cat: History Window
+ 
+ タイトルバーの「history」タブをクリックすると、サインアップしてからの自分の行動がすべて表示されます。
+
+このボタンは、application.pyのhistory関数にリンクしています。基本的には、テーブル「history」からレコードを取得した後、「history.html」をレンダリングします。
+
+これにより、ユーザーは必要に応じて自分のすべての活動を確認することができます。
 
  If you click on ‘history’ tab on the title bar, you will see all your activities since you signed up. 
  
@@ -335,6 +355,14 @@ Students begin to do their assignments by selecting the input text and pressing 
  ![history](history.png)
 
 ### :smile_cat: Chang Password Window
+ 
+ タイトルバーの「change password」をクリックすると、「application.py」の関数「change_password」が呼び出されます。
+
+ユーザーは自分のパスワードのみを変更することができます。そのためには、ユーザーは自分のユーザーIDでログインし、フォームに現在のパスワードを記入しなければなりません。
+
+しかし、管理者であれば、誰のパスワードでも変更することができます。
+
+基本的に、関数change_passwordはテーブルusersから情報を取得し、問題がなければテーブルを更新します。また、この関数はテーブルhistoryを更新します。
 
  Clicking on 'change password' on the title bar will call function 'change_password' in 'application.py'.
 
@@ -349,6 +377,10 @@ Students begin to do their assignments by selecting the input text and pressing 
  Basically, function 'change_password' retrieves info from table 'users' and if everything is right, it updates the table. needless to say that this function updates table 'history'.
  
  ### :smile_cat: Logout Window
+ 
+ 最後に、「log out」ボタンを押すと、「application.py」の「logout」関数が呼び出され、セッションがクリアされて終了します。
+
+さらに、このボタンを押すと、ログイン画面が表示されます。
 
  Finally, if you press on ‘log out’ button, it will call function 'logout' in 'application.py' to clear and finish your session.  
  
