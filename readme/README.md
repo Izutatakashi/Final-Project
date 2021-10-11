@@ -165,6 +165,18 @@
  Actually, this function 'mkdir_mkfile' is called every time a new user joins to the system as a user. 
 
 ### :smile_cat: Login Window
+ 
+ ユーザーがアプリにアクセスすると、最初に表示されるのが「login.html」です。
+
+login.htmlの中には、ログインしたときに天気情報を表示するために、ブラウザのジオロケーションを検出するJavaScriptがあります。
+
+ログインボタンをクリックすると、「application.py」内の関数「login」が呼び出されます。この関数は、ユーザー名とパスワードが正しく入力されているかどうかをチェックします。
+
+すべてが正しく関数に送信されると、ログイン手順が確立されます。この時点で「セッション」が開始され、ブラウザのローカル気象情報が要求されます。
+
+天気情報の取得は、「application.py」の関数「weather_info」によって行われます。
+
+エラーが検出されると、メッセージウィンドウが表示され、ユーザーは最初のウィンドウからやり直さなければなりません。
 
  When the users access the app, the first window that they will see is 'login.html'. 
  
