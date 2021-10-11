@@ -390,6 +390,12 @@ update_my_input_file'関数は、入力ファイルとテーブル'history'を�
 
  ## :warning: Disclaimer
  
+ 本アプリは、いかなる保証もありません。また、損害やリスクに対して一切の責任を負わず、いかなる種類のサポートやフィードバックも行いません。
+
+本アプリを使用した時点で、完全に自己責任であることを無条件に同意したことになります。
+
+したがって、法的にも非法的にも、お客様が得たものについて本アプリを責めることは決してないものとします。
+ 
   This app is provided "as is" and without warranty of any kind. The author of this project does not assume any responsability for damage or risk and does not provide any kind of support or feedback whatsoever.
  
   Once you use this app, you fully agree unconditionally that it is completely at your own risk and on your sole responsability.
