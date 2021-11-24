@@ -2,7 +2,7 @@
 
 ## :boy: TAKASHI IZUTA
 
-### :film_strip: Video Demo:  <URL HERE>
+### :film_strip: Video Demo:  <https://www.youtube.com/watch?v=qmw-d7C7w0Y&t=135s>
 
 ## :point_right:  Goal, Motivation and Uniqueness  
  
