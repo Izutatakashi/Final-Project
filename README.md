@@ -288,7 +288,7 @@ Students begin to do their assignments by selecting the input text and pressing 
  
  If the sample text is correctly stored in its file, the window comes back with empty text area.
 
- ![update sample screen](update_sample.png)
+ ![update sample screen](readme/update_sample.png)
 
  If you, as the administrator, want to have an overview of all users' typewriting tasks progress, press 'show' button. It will call function 'show_all_work_in_progess' in 'application.py', which will retrieve and come back to this page with info from table 'user_input'. 
  
