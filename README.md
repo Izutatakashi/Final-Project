@@ -278,9 +278,9 @@ Students begin to do their assignments by selecting the input text and pressing 
 
  The area at the bottom shows the activities of all users. So that, the administrator can see the past and current activities of all users. 
 
- ![index1 screen](index1.png)
- ![index2 screen](index2.png)
- ![index3 screen](index3.png)
+ ![index1 screen](readme/index1.png)
+ ![index2 screen](readme/index2.png)
+ ![index3 screen](readme/index3.png)
 
  If you, as an administrator, want to store a new sample or update an existing sample file, you will have firstly to choose the sample file and click on 'submit', which will trigger function 'sample_file_to_update' in 'application.py'. This function will retrieve the sample file from the system, open it and read its content. Then, the content is returned back to the text area in 'index.html'. 
  
@@ -294,17 +294,17 @@ Students begin to do their assignments by selecting the input text and pressing 
  
  if you click on 'hide', it will call function 'hide_all_work_in_progess' in 'application.py', and come back empty to this window. 
 
- ![show_all_work_in_progess](all_progress.png)
+ ![show_all_work_in_progess](readme/all_progress.png)
 
  Likewise, you press on 'show' button to call function 'show_all_activities' in 'application.py'. It will retrieve all the records from table 'history' and show all the activities since the time you introduced the system. 
  
  On the other hand, if you click on 'hide' button, it will call function 'hide_all_activities' in 'application.py', which will return empty info.
 
- ![show_all_activities](all_activities.png)
+ ![show_all_activities](readme/all_activities.png)
 
  Finally, if you want to typewrite into your task file, choose the file and press on 'submit'. It will call function 'choose_your_text_to_input' in 'application.py', which will open the selected file and read its content as well as retrieve the info to be passed to 'input_text.html'
 
- ![input_text](select_input_file.png)
+ ![input_text](readme/select_input_file.png)
 
 ### :smile_cat: Input Text Window
  
@@ -326,7 +326,7 @@ update_my_input_file'関数は、入力ファイルとテーブル'history'を�
 
  To begin with, the user will have to click on ‘show’ button to pop up the sample window, which is executed by a piece of JavaScript code in 'keyboard.js'.
 
- ![input_file](input_file.png)
+ ![input_file](readme/input_file.png)
 
  Once you have the sample text on the screen, all you have to do is to write down the sample text onto the input text area.
 
@@ -352,7 +352,7 @@ update_my_input_file'関数は、入力ファイルとテーブル'history'を�
 
  This allows users to check all their activities when necessary. 
 
- ![history](history.png)
+ ![history](readme/history.png)
 
 ### :smile_cat: Chang Password Window
  
@@ -366,7 +366,7 @@ update_my_input_file'関数は、入力ファイルとテーブル'history'を�
 
  Clicking on 'change password' on the title bar will call function 'change_password' in 'application.py'.
 
- ![change_password](change_password.png)
+ ![change_password](readme/change_password.png)
 
  Users are allowed to change only their passwords. In order to do so, they will have to be logged in with their own user ids as well as fill up their current passwords in the form.
 
@@ -386,7 +386,7 @@ update_my_input_file'関数は、入力ファイルとテーブル'history'を�
  
  Moreover, when you press it, the login window will come up.
 
- ![logout](logout.png)
+ ![logout](readme/logout.png)
 
  ## :warning: Disclaimer
  
