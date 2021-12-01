@@ -180,7 +180,7 @@ login.htmlの中には、ログインしたときに天気情報を表示する�
 
  When the users access the app, the first window that they will see is 'login.html'. 
  
- ![login screen](login.png)
+ ![login screen](readme/login.png)
 
  Inside 'login.html' there is a JavaScript snippet that will detect the geolocation of the browser in order to display the weather info once you are logged in.
 
@@ -214,7 +214,7 @@ registerボタンを押すと、「application.py」の「register」関数が�
 
  New users will have to click on 'register' button and fill up the form in 'register.html'
 
- ![register screen](register.png)
+ ![register screen](readme/register.png)
 
  A piece of JavaScript will check whether the lenght of the password is greater than 7 letters and whether it includes not only letters, but also at least a number.  If not, button 'register' is disabled.
 
